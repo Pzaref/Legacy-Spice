@@ -1,2 +1,2 @@
 # Legacy-Spice
-Legacy SPice Website
+Legacy Spice Website
