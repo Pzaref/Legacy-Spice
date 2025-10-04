@@ -3,71 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Legacy Spice LLC — Egyptian Spice Blends</title>
-  <meta name="description" content="Legacy Spice LLC crafts small‑batch Egyptian spice blends sourced from trusted farms. Fresh, bold, and rooted in heritage." />
-  <meta property="og:title" content="Legacy Spice LLC — Egyptian Spice Blends" />
-  <meta property="og:description" content="Small‑batch Egyptian spice blends sourced from trusted farms. Fresh, bold, and rooted in heritage." />
+  <title>Legacy Spice LLC — Bulk Spice Supply from Egypt</title>
+  <meta name="description" content="Legacy Spice LLC supplies bulk dehydrated onion, garlic, parsley and more to distributors and food manufacturers. Container or ton‑scale orders. Contact sales@legacyspicellc.com." />
+  <meta property="og:title" content="Legacy Spice LLC — Bulk Spice Supply" />
+  <meta property="og:description" content="Bulk dehydrated onion, garlic, parsley and more. Ship from Cairo, Egypt. Ton or container quantities." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/8b5a2b/ffffff&text=Legacy+Spice" />
-  <meta name="theme-color" content="#8B5A2B" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <meta property="og:image" content="/logo.png" />
+  <meta name="theme-color" content="#7B1020" />
+
+  <!-- Google Fonts (professional serif + clean sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
+    /* Color palette pulled from your logo */
     :root{
-      --bg:#fff9f2;          /* desert sand */
-      --ink:#2b261f;         /* dark ink */
-      --accent:#c27a2c;      /* golden spice */
-      --accent-dark:#8b5a2b; /* cinnamon */
-      --muted:#6b6154;       /* muted text */
-      --card:#ffffff;
-      --ring: #e4c9a0;
-      --radius: 20px;
+      --sand: #E9E2C8;     /* soft beige background */
+      --ink:  #2a2622;     /* body text */
+      --maroon:#7B1020;    /* deep logo maroon */
+      --spice:#9B7B52;     /* warm spice brown for accents */
+      --line:#e6dcc4;      /* soft divider */
+      --card:#ffffff;      /* cards */
+      --radius: 18px;
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--ink);}    
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6}
-    img{max-width:100%; height:auto;}
-    a{color:var(--accent-dark); text-decoration:none}
-    a:hover{ text-decoration:underline }
-    .container{width:min(1100px, 92vw); margin-inline:auto}
-    header{position:sticky; top:0; background:rgba(255,249,242,.8); backdrop-filter: blur(8px); border-bottom:1px solid #f0e4d3; z-index:20}
+    html,body{margin:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--sand); color:var(--ink); line-height:1.6}
+    img{max-width:100%; height:auto}
+    a{color:var(--maroon); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1100px,92vw); margin-inline:auto}
+
+    header{position:sticky; top:0; z-index:20; background:rgba(233,226,200,.85); backdrop-filter: blur(8px); border-bottom:1px solid var(--line)}
     .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
     .brand{display:flex; align-items:center; gap:12px}
-    .brand h1{font-family:Cinzel,serif; font-size:1.125rem; margin:0}
-    .logo{width:36px; height:36px}
-    .btn{display:inline-block; padding:.8rem 1.1rem; border-radius:999px; font-weight:700; border:1px solid var(--accent-dark); background:var(--accent-dark); color:#fff; box-shadow:0 6px 16px rgba(139,90,43,.25); transition:.2s transform, .2s filter}
+    .brand img{width:40px; height:40px; border-radius:10px; border:2px solid var(--maroon); object-fit:cover; background:#fff}
+    .brand h1{font-family:Cinzel,serif; font-size:1.1rem; letter-spacing:.3px; margin:0}
+    .menu{display:flex; gap:10px; flex-wrap:wrap}
+    .pill{display:inline-block; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:#fff; font-weight:600; font-size:.92rem}
+
+    .btn{display:inline-block; padding:.9rem 1.2rem; border-radius:999px; font-weight:700; border:1px solid var(--maroon); background:var(--maroon); color:#fff; box-shadow:0 6px 18px rgba(123,16,32,.22); transition:.2s transform,.2s filter}
     .btn:hover{transform:translateY(-1px); filter:brightness(1.05)}
-    .btn.outline{background:transparent; color:var(--accent-dark)}
-
-    /* Hero */
-    .hero{display:grid; grid-template-columns:1.3fr .9fr; gap:40px; align-items:center; padding:clamp(40px, 6vw, 80px) 0;}
-    .hero h2{font-family:Cinzel,serif; font-size:clamp(2rem, 4vw, 3rem); line-height:1.2; margin:0 0 10px}
-    .hero p{color:var(--muted); margin:0 0 22px}
-    .badge{display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border:1px solid var(--ring); border-radius:999px; background:#fff; font-size:.9rem}
-    .card{background:var(--card); border:1px solid #f0e4d3; border-radius:var(--radius); box-shadow:0 10px 30px rgba(139,90,43,.10)}
-    .card.padded{padding:22px}
-
-    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-    @media (max-width:900px){.hero{grid-template-columns:1fr} .grid-3{grid-template-columns:1fr}}
+    .btn.outline{background:transparent; color:var(--maroon)}
 
     /* Sections */
-    section{padding: clamp(40px, 7vw, 90px) 0; border-top:1px solid #f0e4d3}
-    h3.sec{font-family:Cinzel,serif; font-size:1.8rem; margin:0 0 10px}
-    .lead{color:var(--muted); margin:0 0 24px}
-    .pill{display:inline-block; padding:6px 12px; background:#fff; border:1px solid #f0e4d3; border-radius:999px; font-size:.85rem}
+    section{padding: clamp(40px,7vw,90px) 0; border-top:1px solid var(--line)}
+    h2,h3{font-family:Cinzel,serif; letter-spacing:.2px}
+    h2{font-size:clamp(1.8rem,3.4vw,2.6rem); margin:0 0 8px}
+    h3{font-size:1.5rem; margin:0 0 6px}
+    .lead{color:#5d554b; margin:0 0 22px}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:0 12px 30px rgba(0,0,0,.06)}
+    .padded{padding:20px}
 
-    .blend{display:flex; gap:16px; align-items:flex-start; padding:14px; border:1px dashed #eadac0; border-radius:14px; background:#fff}
-    .blend strong{font-family:Cinzel,serif}
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1.25fr .9fr; gap:36px; align-items:center}
+    .hero .tag{display:inline-flex; gap:8px; align-items:center; padding:6px 12px; border:1px solid var(--line); background:#fff; border-radius:999px; font-weight:600; font-size:.92rem}
+    .hero .bullets{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; margin:14px 0}
+    .hero .bullets .item{background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; font-weight:600}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
 
-    .faq details{background:#fff; border:1px solid #f0e4d3; border-radius:14px; padding:14px 16px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+
+    .table{width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+    .table th,.table td{padding:12px 14px; border-bottom:1px solid var(--line); text-align:left}
+    .table th{background:#faf7ef; font-family:Cinzel,serif}
+
+    .kpi{display:flex; gap:16px; flex-wrap:wrap}
+    .kpi .k{flex:1 1 200px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px}
+    .k .num{font-size:1.6rem; font-weight:800; color:var(--maroon)}
+
+    .badge{display:inline-block; padding:6px 10px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:.85rem; font-weight:700}
+
+    .faq details{background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px}
     .faq details+details{margin-top:10px}
     .faq summary{cursor:pointer; font-weight:700}
 
-    footer{padding:45px 0; text-align:center; color:var(--muted)}
+    footer{padding:42px 0; text-align:center; color:#6a6156}
 
-    /* Subtle entrances */
-    [data-animate]{opacity:0; transform:translateY(8px); transition: .6s ease}
+    /* Simple reveal on scroll */
+    [data-animate]{opacity:0; transform:translateY(8px); transition:.6s ease}
     [data-animate].in{opacity:1; transform:none}
   </style>
 </head>
@@ -75,219 +92,223 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <!-- Inline SVG logo: Sun & Pyramid Fusion -->
-        <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="g" x1="0" x2="1" y1="1" y2="0">
-              <stop offset="0" stop-color="#8b5a2b"/>
-              <stop offset="1" stop-color="#c27a2c"/>
-            </linearGradient>
-          </defs>
-          <circle cx="32" cy="32" r="30" fill="#fff9f2" stroke="#e4c9a0"/>
-          <path d="M10 44h44L39 26l-7 9-5-7-17 16z" fill="url(#g)"/>
-          <!-- Sun rays -->
-          <g stroke="#c27a2c" stroke-width="2" stroke-linecap="round">
-            <line x1="32" y1="6" x2="32" y2="12"/>
-            <line x1="58" y1="32" x2="52" y2="32"/>
-            <line x1="6" y1="32" x2="12" y2="32"/>
-            <line x1="48" y1="14" x2="44" y2="18"/>
-            <line x1="16" y1="14" x2="20" y2="18"/>
-          </g>
-        </svg>
+        <img src="logo.png" alt="Legacy Spice LLC logo" onerror="this.style.display='none'"/>
         <h1>Legacy Spice LLC</h1>
       </div>
-      <nav>
-        <a class="pill" href="#blends">Spice Blends</a>
-        <a class="pill" href="#about">About</a>
+      <nav class="menu" aria-label="Primary">
+        <a class="pill" href="#products">Products</a>
+        <a class="pill" href="#capabilities">Capabilities</a>
+        <a class="pill" href="#quality">Quality</a>
+        <a class="pill" href="#logistics">Logistics</a>
         <a class="pill" href="#contact">Contact</a>
-        <a class="btn" href="#order">Order</a>
+        <a class="btn" href="#contact">Contact Sales</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero container">
+    <section class="container hero">
       <div>
-        <span class="badge" aria-label="Small batch & fresh ground">🌿 Small‑batch • Fresh‑ground</span>
-        <h2>Egyptian spice blends—<br>bold flavor, timeless heritage.</h2>
-        <p>We craft small‑batch blends using sun‑dried spices from trusted growers. No fillers, ever. Just vibrant, authentic flavor for your kitchen.</p>
+        <span class="tag">B2B • Bulk Spice Supply</span>
+        <h2>Reliable bulk spices for distributors & food manufacturers.</h2>
+        <p class="lead">We supply dehydrated onion, garlic, parsley and more—sourced in Egypt, blended to spec, and shipped in ton or container quantities.</p>
+        <div class="bullets">
+          <div class="item">Dehydrated Onion (minced / granulated)</div>
+          <div class="item">Garlic (minced / granulated)</div>
+          <div class="item">Parsley (flakes)</div>
+          <div class="item">Other products on request</div>
+        </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap">
-          <a class="btn" href="#order">Shop Starter Set</a>
-          <a class="btn outline" href="#blends">Explore Blends</a>
+          <a class="btn" href="#contact">Contact us for pricing</a>
+          <a class="btn outline" href="#products">View product list</a>
         </div>
-        <div style="margin-top:16px; color:var(--muted); font-size:.95rem">
-          Free local pickup in Nashville • Flat $5 U.S. shipping
-        </div>
+        <div style="margin-top:12px; color:#6a6156; font-size:.95rem">Email: <a href="mailto:sales@legacyspicellc.com">sales@legacyspicellc.com</a> • Phone: <a href="tel:+16155251297">+1 (615) 525‑1297</a></div>
       </div>
       <div>
-        <div class="card padded" aria-label="Featured blends" data-animate>
-          <div class="grid-3">
-            <div>
-              <img alt="Cairo Shawarma Blend" src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&w=800&auto=format&fit=crop"/>
-              <strong>Cairo Shawarma</strong><br>
-              Warm, garlicky, street‑food classic.
-            </div>
-            <div>
-              <img alt="Alexandria Fish Spice" src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=800&auto=format&fit=crop"/>
-              <strong>Alexandria Fish</strong><br>
-              Citrusy, peppery, perfect for seafood.
-            </div>
-            <div>
-              <img alt="Luxor Dukkah" src="https://images.unsplash.com/photo-1546524779-6c05e558fd89?q=80&w=800&auto=format&fit=crop"/>
-              <strong>Luxor Dukkah</strong><br>
-              Nutty sesame, coriander, and cumin.
-            </div>
+        <div class="card padded" data-animate>
+          <h3 style="margin-top:0">At a glance</h3>
+          <div class="kpi">
+            <div class="k"><div class="num">Ton / Container</div><div>Bulk order capability</div></div>
+            <div class="k"><div class="num">Cairo, Egypt</div><div>Origin & export hub</div></div>
+            <div class="k"><div class="num">Email First</div><div>Fast quote via email</div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BLENDS -->
-    <section id="blends">
+    <!-- PRODUCTS -->
+    <section id="products">
       <div class="container">
-        <h3 class="sec">Signature Blends</h3>
-        <p class="lead">Balanced, versatile, and tested in real home kitchens. Sprinkle, rub, or marinate—no rules, just flavor.</p>
-        <div class="grid-3">
-          <div class="blend">
-            <div>🔥</div>
-            <div>
-              <strong>Cairo Shawarma</strong>
-              <div>Garlic • Cumin • Paprika • Cardamom</div>
-              <small>Chicken, beef, roasted veg, or fries.</small>
-            </div>
-          </div>
-          <div class="blend">
-            <div>🌊</div>
-            <div>
-              <strong>Alexandria Fish</strong>
-              <div>Coriander • Black pepper • Citrus peel • Dill</div>
-              <small>Fish, shrimp, rice, and soups.</small>
-            </div>
-          </div>
-          <div class="blend">
-            <div>🥖</div>
-            <div>
-              <strong>Luxor Dukkah</strong>
-              <div>Sesame • Hazelnut • Cumin • Coriander</div>
-              <small>Dip with olive oil and bread, top salads.</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT / ETHOS -->
-    <section id="about">
-      <div class="container">
-        <h3 class="sec">Rooted in Egypt. Crafted in small batches.</h3>
-        <p class="lead">We’re a family business bringing the flavors of Egypt to your table. Our spices are sun‑dried, freshly ground, and blended to order for maximum aroma.</p>
+        <h3>Products</h3>
+        <p class="lead">Core items kept in regular production. Additional spices available on request.</p>
         <div class="grid-3">
           <div class="card padded" data-animate>
-            <strong>Freshness Guarantee</strong>
-            <p>We grind weekly and seal immediately. If a blend doesn’t wow you, we’ll replace it.</p>
-          </div>
-          <div class="card padded" data-animate>
-            <strong>Clean & Transparent</strong>
-            <p>No fillers, artificial colors, or anti‑caking agents—just real spices you can pronounce.</p>
-          </div>
-          <div class="card padded" data-animate>
-            <strong>Responsibly Sourced</strong>
-            <p>We prioritize growers using traditional methods and fair practices.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ORDER / PRICING -->
-    <section id="order">
-      <div class="container">
-        <h3 class="sec">Starter Set</h3>
-        <p class="lead">Try our three best‑sellers. Each jar is 60g. Limited small‑batch drops.</p>
-        <div class="card padded" style="display:flex; gap:20px; align-items:center; flex-wrap:wrap">
-          <div style="flex:1 1 260px">
-            <img alt="Starter set jars" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop"/>
-          </div>
-          <div style="flex:1 1 300px">
-            <div style="font-size:2rem; font-family:Cinzel,serif">$24 <small style="font-size:1rem; color:var(--muted)">/ set of 3</small></div>
+            <strong>Dehydrated Onion</strong>
             <ul>
-              <li>Cairo Shawarma • 60g</li>
-              <li>Alexandria Fish • 60g</li>
-              <li>Luxor Dukkah • 60g</li>
+              <li>Minced • Granulated</li>
+              <li>Typical pack: 25 kg bags</li>
+              <li>Use: savory blends, snacks, sauces</li>
             </ul>
-            <a class="btn" href="mailto:sales@legacyspicellc.com?subject=Starter%20Set%20Order&body=Hi%20Legacy%20Spice%2C%0A%0AI'd%20like%20to%20order%20the%20Starter%20Set.%20Please%20reply%20with%20payment%20options%20and%20pickup%2Fshipping.%0A%0AName%3A%0AShipping%20Address%3A%0AQuantity%3A%0A">Order via Email</a>
-            <div style="margin-top:8px; font-size:.9rem; color:var(--muted)">Pay by invoice • Local pickup or $5 shipping (U.S.)</div>
+          </div>
+          <div class="card padded" data-animate>
+            <strong>Garlic</strong>
+            <ul>
+              <li>Minced • Granulated</li>
+              <li>Typical pack: 25 kg bags</li>
+              <li>Use: marinades, rubs, seasonings</li>
+            </ul>
+          </div>
+          <div class="card padded" data-animate>
+            <strong>Parsley</strong>
+            <ul>
+              <li>Flakes</li>
+              <li>Typical pack: 10–20 kg bags</li>
+              <li>Use: blends, bakery, RTE toppings</li>
+            </ul>
           </div>
         </div>
+
+        <table class="table" style="margin-top:16px">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Forms</th>
+              <th>MOQ</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dehydrated Onion</td>
+              <td>Minced, Granulated</td>
+              <td>By ton or container</td>
+              <td>Specs on request</td>
+            </tr>
+            <tr>
+              <td>Garlic</td>
+              <td>Minced, Granulated</td>
+              <td>By ton or container</td>
+              <td>Specs on request</td>
+            </tr>
+            <tr>
+              <td>Parsley</td>
+              <td>Flakes</td>
+              <td>By ton or container</td>
+              <td>Other herbs available</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="badge" style="margin-top:12px">Other products available on request</div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section>
+    <!-- CAPABILITIES -->
+    <section id="capabilities">
       <div class="container">
-        <h3 class="sec">What cooks are saying</h3>
+        <h3>Capabilities</h3>
         <div class="grid-3">
           <div class="card padded" data-animate>
-            “The shawarma blend nails that street‑food flavor. It’s our weekly go‑to now.”<br>
-            <strong>— Sara M.</strong>
+            <strong>Bulk Supply</strong>
+            <p>We fulfill ton‑scale and full container orders. Palletized shipments with export‑ready documentation.</p>
           </div>
           <div class="card padded" data-animate>
-            “Dukkah on olive oil and bread? Unreal. We also toss it on salads.”<br>
-            <strong>— Omar K.</strong>
+            <strong>Custom Requirements</strong>
+            <p>Cut size, moisture targets, and micro parameters per your specification when available from suppliers.</p>
           </div>
           <div class="card padded" data-animate>
-            “Bright, peppery fish spice—no more bland salmon nights.”<br>
-            <strong>— Lina A.</strong>
+            <strong>Consistent Sourcing</strong>
+            <p>Egypt‑grown spices with reliable seasonal availability. Alternatives can be discussed on request.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section>
-      <div class="container faq">
-        <h3 class="sec">FAQ</h3>
-        <details>
-          <summary>How long do the spices stay fresh?</summary>
-          <p>For best aroma, use within 9–12 months. Store sealed, away from heat and light.</p>
-        </details>
-        <details>
-          <summary>Are your blends gluten‑free?</summary>
-          <p>Yes—no fillers or anti‑caking agents. Just pure spices and nuts (dukkah contains sesame & nuts).</p>
-        </details>
-        <details>
-          <summary>Do you offer wholesale?</summary>
-          <p>Yes—email <a href="mailto:sales@legacyspicellc.com">sales@legacyspicellc.com</a> for a line sheet.</p>
-        </details>
+    <!-- QUALITY -->
+    <section id="quality">
+      <div class="container">
+        <h3>Quality & Documentation</h3>
+        <p class="lead">Specification sheets and standard export documents are available upon request for each order.</p>
+        <ul class="card padded" style="list-style: none; padding-left:20px">
+          <li>• Product specifications (cut, moisture, ash, etc.)</li>
+          <li>• Lot identification and basic trace information</li>
+          <li>• Export docs: commercial invoice, packing list, certificate of origin</li>
+          <li>• Sampling for approval available on select items</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LOGISTICS -->
+    <section id="logistics">
+      <div class="container">
+        <h3>Logistics</h3>
+        <div class="card padded">
+          <p><strong>Ship from:</strong> Cairo, Egypt</p>
+          <p><strong>Order sizes:</strong> By ton or 20’/40’ containers. Mixed items can be discussed.</p>
+          <p><strong>Lead times:</strong> Quoted at order based on season and volume.</p>
+          <p><strong>Terms:</strong> Common INCOTERMS available (FOB, CFR, etc.).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLACEHOLDER FOR FUTURE SECTION -->
+    <section id="future">
+      <div class="container">
+        <h3>Additional Section (placeholder)</h3>
+        <p class="lead">Reserved for certifications, partners, or case studies. We can fill this later without changing the layout.</p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (sample placeholders to edit later) -->
+    <section id="testimonials">
+      <div class="container">
+        <h3>What partners say (sample)</h3>
+        <div class="grid-3">
+          <div class="card padded" data-animate>“Consistent quality and responsive communication on bulk orders.”<br><strong>— Purchasing Manager, Seasoning Co.</strong></div>
+          <div class="card padded" data-animate>“Clear export paperwork and reliable lead times from Cairo.”<br><strong>— Logistics Lead, Importer</strong></div>
+          <div class="card padded" data-animate>“Solid dehydrated onion and garlic at competitive pricing.”<br><strong>— Director, Food Mfg.</strong></div>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
       <div class="container">
-        <h3 class="sec">Contact</h3>
-        <div class="card padded" style="display:grid; grid-template-columns:1fr 1fr; gap:18px">
+        <h3>Contact</h3>
+        <p class="lead">Contact us for further information. We’ll reply promptly with product details and pricing.</p>
+        <div class="card padded" style="display:grid; grid-template-columns:1.1fr .9fr; gap:18px">
           <div>
             <p><strong>Email:</strong> <a href="mailto:sales@legacyspicellc.com">sales@legacyspicellc.com</a></p>
-            <p><strong>Location:</strong> Nashville, Tennessee</p>
-            <p><strong>Hours:</strong> Mon–Fri 9am–5pm</p>
-            <p><strong>Social:</strong> <a href="#">Instagram</a> • <a href="#">Facebook</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+16155251297">+1 (615) 525‑1297</a></p>
+            <p><strong>Location:</strong> Cairo, Egypt</p>
+            <div style="display:flex; gap:10px; margin-top:6px" aria-label="Social icons (placeholders)">
+              <!-- Placeholder icons without links for later -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--spice)" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--spice)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--spice)" stroke-width="2"><path d="M4 4h16v16H4z"/></svg>
+            </div>
           </div>
-          <form aria-label="Quick message" onsubmit="mailtoHandler(event)">
-            <label> Name<br>
-              <input required name="name" placeholder="Your name" style="width:100%">
+
+          <!-- Progressive contact form: posts to data-form-endpoint if provided, else falls back to mailto -->
+          <form id="quoteForm" data-form-endpoint="" onsubmit="handleSubmit(event)">
+            <label> Company<br>
+              <input name="company" required placeholder="Your company" style="width:100%">
+            </label>
+            <br>
+            <label> Contact name<br>
+              <input name="name" required placeholder="Full name" style="width:100%">
             </label>
             <br>
             <label> Email<br>
-              <input required type="email" name="email" placeholder="you@example.com" style="width:100%">
+              <input type="email" name="email" required placeholder="you@company.com" style="width:100%">
             </label>
             <br>
-            <label> Message<br>
-              <textarea name="message" rows="4" placeholder="How can we help?" style="width:100%"></textarea>
+            <label> Interest (items / volume)<br>
+              <textarea name="message" rows="4" placeholder="e.g., Dehydrated onion, 3 tons; timeline; specs" style="width:100%"></textarea>
             </label>
             <br>
             <button class="btn" type="submit">Send</button>
-            <div style="font-size:.85rem; color:var(--muted); margin-top:6px">This opens your email app with a pre‑filled message.</div>
+            <div style="font-size:.85rem; color:#6a6156; margin-top:6px">This form will open your email app unless a form endpoint is configured.</div>
           </form>
         </div>
       </div>
@@ -296,46 +317,61 @@
 
   <footer>
     <div class="container">
-      © <span id="y"></span> Legacy Spice LLC • All rights reserved
+      © <span id="y"></span> Legacy Spice LLC • Cairo, Egypt • sales@legacyspicellc.com • +1 (615) 525‑1297
     </div>
   </footer>
 
   <script>
-    // Simple fade-in on scroll
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target);} });
-    },{threshold:.15});
-    document.querySelectorAll('[data-animate]').forEach(el=>obs.observe(el));
+    // Reveal on scroll
+    const io = new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}}),{threshold:.15});
+    document.querySelectorAll('[data-animate]').forEach(el=>io.observe(el));
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Mailto form helper
-    function mailtoHandler(e){
+    // Progressive form: use Formspree/endpoint if provided; else open a mailto
+    function handleSubmit(e){
       e.preventDefault();
       const f = e.target;
-      const name = encodeURIComponent(f.name.value.trim());
-      const email = encodeURIComponent(f.email.value.trim());
-      const message = encodeURIComponent(f.message.value.trim());
-      const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
-      window.location.href = `mailto:sales@legacyspicellc.com?subject=Website%20Inquiry&body=${body}`;
+      const endpoint = f.getAttribute('data-form-endpoint');
+      const formData = new FormData(f);
+
+      if (endpoint && endpoint.trim().length > 0){
+        fetch(endpoint, {method:'POST', body: formData, headers:{'Accept':'application/json'}})
+          .then(r=>r.ok?alert('Thanks! We\'ll be in touch shortly.'):Promise.reject())
+          .catch(()=>{ fallbackMailto(formData); });
+      } else {
+        fallbackMailto(formData);
+      }
+    }
+
+    function fallbackMailto(fd){
+      const company = encodeURIComponent(fd.get('company')||'');
+      const name = encodeURIComponent(fd.get('name')||'');
+      const email = encodeURIComponent(fd.get('email')||'');
+      const message = encodeURIComponent(fd.get('message')||'');
+      const body = `Company: ${company}%0AName: ${name}%0AEmail: ${email}%0A%0A${message}`;
+      window.location.href = `mailto:sales@legacyspicellc.com?subject=Bulk%20Spice%20Inquiry&body=${body}`;
     }
   </script>
 
-  <!-- Structured data (LocalBusiness) -->
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Organization",
     "name": "Legacy Spice LLC",
-    "image": "https://dummyimage.com/1200x630/8b5a2b/ffffff&text=Legacy+Spice",
+    "url": "https://www.legacyspicellc.com/",
+    "logo": "https://www.legacyspicellc.com/logo.png",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "sales@legacyspicellc.com",
+      "telephone": "+1-615-525-1297"
+    }],
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Nashville",
-      "addressRegion": "TN",
-      "addressCountry": "US"
-    },
-    "email": "sales@legacyspicellc.com",
-    "url": "https://legacyspice.github.io/",
-    "openingHours": "Mo-Fr 09:00-17:00"
+      "addressLocality": "Cairo",
+      "addressCountry": "EG"
+    }
   }
   </script>
 </body>
