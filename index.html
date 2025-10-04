@@ -1,68 +1,378 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Egyptian Spice Exports</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Legacy Spice LLC — Bulk Spice Supply from Egypt</title>
+  <meta name="description" content="Legacy Spice LLC supplies bulk dehydrated onion, garlic, parsley and more to distributors and food manufacturers. Container or ton‑scale orders. Contact sales@legacyspicellc.com." />
+  <meta property="og:title" content="Legacy Spice LLC — Bulk Spice Supply" />
+  <meta property="og:description" content="Bulk dehydrated onion, garlic, parsley and more. Ship from Cairo, Egypt. Ton or container quantities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/logo.png" />
+  <meta name="theme-color" content="#7B1020" />
+
+  <!-- Google Fonts (professional serif + clean sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f6ee; }
-    header { background: #d4bb6f; padding: 2em 0; text-align: center; }
-    h1 { margin: 0; font-size: 2.5em; color: #442c01; }
-    section { margin: 2em auto; max-width: 700px; padding: 1em; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(184,134,11,.1); }
-    h2 { color: #806200; }
-    ul { list-style: none; padding: 0; }
-    li { background: #f5e0b7; margin: 0.5em 0; padding: 0.5em 1em; border-radius: 5px; }
-    .contact { margin-top: 2em; }
-    footer { text-align: center; padding: 2em 0 1em 0; color: #806200; }
-    .btn { display: inline-block; text-decoration: none; background: #d4bb6f; color: #442c01; padding: 0.75em 2em; border-radius: 5px; font-weight: bold; margin-top: 1em; }
+    /* Color palette pulled from your logo */
+    :root{
+      --sand: #E9E2C8;     /* soft beige background */
+      --ink:  #2a2622;     /* body text */
+      --maroon:#7B1020;    /* deep logo maroon */
+      --spice:#9B7B52;     /* warm spice brown for accents */
+      --line:#e6dcc4;      /* soft divider */
+      --card:#ffffff;      /* cards */
+      --radius: 18px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--sand); color:var(--ink); line-height:1.6}
+    img{max-width:100%; height:auto}
+    a{color:var(--maroon); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1100px,92vw); margin-inline:auto}
+
+    header{position:sticky; top:0; z-index:20; background:rgba(233,226,200,.85); backdrop-filter: blur(8px); border-bottom:1px solid var(--line)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{width:40px; height:40px; border-radius:10px; border:2px solid var(--maroon); object-fit:cover; background:#fff}
+    .brand h1{font-family:Cinzel,serif; font-size:1.1rem; letter-spacing:.3px; margin:0}
+    .menu{display:flex; gap:10px; flex-wrap:wrap}
+    .pill{display:inline-block; padding:8px 12px; border:1px solid var(--line); border-radius:999px; background:#fff; font-weight:600; font-size:.92rem}
+
+    .btn{display:inline-block; padding:.9rem 1.2rem; border-radius:999px; font-weight:700; border:1px solid var(--maroon); background:var(--maroon); color:#fff; box-shadow:0 6px 18px rgba(123,16,32,.22); transition:.2s transform,.2s filter}
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.05)}
+    .btn.outline{background:transparent; color:var(--maroon)}
+
+    /* Sections */
+    section{padding: clamp(40px,7vw,90px) 0; border-top:1px solid var(--line)}
+    h2,h3{font-family:Cinzel,serif; letter-spacing:.2px}
+    h2{font-size:clamp(1.8rem,3.4vw,2.6rem); margin:0 0 8px}
+    h3{font-size:1.5rem; margin:0 0 6px}
+    .lead{color:#5d554b; margin:0 0 22px}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:0 12px 30px rgba(0,0,0,.06)}
+    .padded{padding:20px}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1.25fr .9fr; gap:36px; align-items:center}
+    .hero .tag{display:inline-flex; gap:8px; align-items:center; padding:6px 12px; border:1px solid var(--line); background:#fff; border-radius:999px; font-weight:600; font-size:.92rem}
+    .hero .bullets{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; margin:14px 0}
+    .hero .bullets .item{background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 12px; font-weight:600}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+
+    .table{width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden}
+    .table th,.table td{padding:12px 14px; border-bottom:1px solid var(--line); text-align:left}
+    .table th{background:#faf7ef; font-family:Cinzel,serif}
+
+    .kpi{display:flex; gap:16px; flex-wrap:wrap}
+    .kpi .k{flex:1 1 200px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px}
+    .k .num{font-size:1.6rem; font-weight:800; color:var(--maroon)}
+
+    .badge{display:inline-block; padding:6px 10px; background:#fff; border:1px solid var(--line); border-radius:999px; font-size:.85rem; font-weight:700}
+
+    .faq details{background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px}
+    .faq details+details{margin-top:10px}
+    .faq summary{cursor:pointer; font-weight:700}
+
+    footer{padding:42px 0; text-align:center; color:#6a6156}
+
+    /* Simple reveal on scroll */
+    [data-animate]{opacity:0; transform:translateY(8px); transition:.6s ease}
+    [data-animate].in{opacity:1; transform:none}
   </style>
 </head>
 <body>
   <header>
-    <h1>Egyptian Spice Exports</h1>
-    <p>Supplying high-quality dehydrated vegetables worldwide</p>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo.png" alt="Legacy Spice LLC logo" onerror="this.style.display='none'"/>
+        <h1>Legacy Spice LLC</h1>
+      </div>
+      <nav class="menu" aria-label="Primary">
+        <a class="pill" href="#products">Products</a>
+        <a class="pill" href="#capabilities">Capabilities</a>
+        <a class="pill" href="#quality">Quality</a>
+        <a class="pill" href="#logistics">Logistics</a>
+        <a class="pill" href="#contact">Contact</a>
+        <a class="btn" href="#contact">Contact Sales</a>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>
-      Based in Egypt, we specialize in premium dehydrated vegetables and spices for global clients. We pride ourselves on product quality, fast shipping, and competitive pricing. Whether you're a wholesaler or retailer, our goods add flavor and shelf-stability to any kitchen!
-    </p>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section class="container hero">
+      <div>
+        <span class="tag">B2B • Bulk Spice Supply</span>
+        <h2>Reliable bulk spices for distributors & food manufacturers.</h2>
+        <p class="lead">We supply dehydrated onion, garlic, parsley and more—sourced in Egypt, blended to spec, and shipped in ton or container quantities.</p>
+        <div class="bullets">
+          <div class="item">Dehydrated Onion (minced / granulated)</div>
+          <div class="item">Garlic (minced / granulated)</div>
+          <div class="item">Parsley (flakes)</div>
+          <div class="item">Other products on request</div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn" href="#contact">Contact us for pricing</a>
+          <a class="btn outline" href="#products">View product list</a>
+        </div>
+        <div style="margin-top:12px; color:#6a6156; font-size:.95rem">Email: <a href="mailto:sales@legacyspicellc.com">sales@legacyspicellc.com</a> • Phone: <a href="tel:+16155251297">+1 (615) 525‑1297</a></div>
+      </div>
+      <div>
+        <div class="card padded" data-animate>
+          <h3 style="margin-top:0">At a glance</h3>
+          <div class="kpi">
+            <div class="k"><div class="num">Ton / Container</div><div>Bulk order capability</div></div>
+            <div class="k"><div class="num">Cairo, Egypt</div><div>Origin & export hub</div></div>
+            <div class="k"><div class="num">Email First</div><div>Fast quote via email</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Our Products</h2>
-    <ul>
-      <li>Dehydrated Onion</li>
-      <li>Dehydrated Garlic</li>
-      <li>Dehydrated Parsley</li>
-      <li>Dehydrated Celery</li>
-      <li>Dehydrated Carrot</li>
-      <li>Dehydrated Leek</li>
-      <li>More on request!</li>
-    </ul>
-    <p>All products are 100% natural, carefully dried, and packaged for maximum freshness.</p>
-  </section>
+    <!-- PRODUCTS -->
+    <section id="products">
+      <div class="container">
+        <h3>Products</h3>
+        <p class="lead">Core items kept in regular production. Additional spices available on request.</p>
+        <div class="grid-3">
+          <div class="card padded" data-animate>
+            <strong>Dehydrated Onion</strong>
+            <ul>
+              <li>Minced • Granulated</li>
+              <li>Typical pack: 25 kg bags</li>
+              <li>Use: savory blends, snacks, sauces</li>
+            </ul>
+          </div>
+          <div class="card padded" data-animate>
+            <strong>Garlic</strong>
+            <ul>
+              <li>Minced • Granulated</li>
+              <li>Typical pack: 25 kg bags</li>
+              <li>Use: marinades, rubs, seasonings</li>
+            </ul>
+          </div>
+          <div class="card padded" data-animate>
+            <strong>Parsley</strong>
+            <ul>
+              <li>Flakes</li>
+              <li>Typical pack: 10–20 kg bags</li>
+              <li>Use: blends, bakery, RTE toppings</li>
+            </ul>
+          </div>
+        </div>
 
-  <section>
-    <h2>Shipping Information</h2>
-    <p>
-      We ship worldwide directly from Egypt. All orders are safely packed and tracked. Contact us for bulk pricing and delivery times.
-    </p>
-  </section>
+        <table class="table" style="margin-top:16px">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Forms</th>
+              <th>MOQ</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dehydrated Onion</td>
+              <td>Minced, Granulated</td>
+              <td>By ton or container</td>
+              <td>Specs on request</td>
+            </tr>
+            <tr>
+              <td>Garlic</td>
+              <td>Minced, Granulated</td>
+              <td>By ton or container</td>
+              <td>Specs on request</td>
+            </tr>
+            <tr>
+              <td>Parsley</td>
+              <td>Flakes</td>
+              <td>By ton or container</td>
+              <td>Other herbs available</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="badge" style="margin-top:12px">Other products available on request</div>
+      </div>
+    </section>
 
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>For inquiries, sample requests, or bulk orders:</p>
-    <ul>
-      <li>Email: info@egyptspices.com</li>
-      <li>Phone: +20 12 3456 7890</li>
-    </ul>
-    <a class="btn" href="mailto:info@egyptspices.com">Email Us</a>
-  </section>
+    <!-- CAPABILITIES -->
+    <section id="capabilities">
+      <div class="container">
+        <h3>Capabilities</h3>
+        <div class="grid-3">
+          <div class="card padded" data-animate>
+            <strong>Bulk Supply</strong>
+            <p>We fulfill ton‑scale and full container orders. Palletized shipments with export‑ready documentation.</p>
+          </div>
+          <div class="card padded" data-animate>
+            <strong>Custom Requirements</strong>
+            <p>Cut size, moisture targets, and micro parameters per your specification when available from suppliers.</p>
+          </div>
+          <div class="card padded" data-animate>
+            <strong>Consistent Sourcing</strong>
+            <p>Egypt‑grown spices with reliable seasonal availability. Alternatives can be discussed on request.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUALITY -->
+    <section id="quality">
+      <div class="container">
+        <h3>Quality & Documentation</h3>
+        <p class="lead">Specification sheets and standard export documents are available upon request for each order.</p>
+        <ul class="card padded" style="list-style: none; padding-left:20px">
+          <li>• Product specifications (cut, moisture, ash, etc.)</li>
+          <li>• Lot identification and basic trace information</li>
+          <li>• Export docs: commercial invoice, packing list, certificate of origin</li>
+          <li>• Sampling for approval available on select items</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LOGISTICS -->
+    <section id="logistics">
+      <div class="container">
+        <h3>Logistics</h3>
+        <div class="card padded">
+          <p><strong>Ship from:</strong> Cairo, Egypt</p>
+          <p><strong>Order sizes:</strong> By ton or 20’/40’ containers. Mixed items can be discussed.</p>
+          <p><strong>Lead times:</strong> Quoted at order based on season and volume.</p>
+          <p><strong>Terms:</strong> Common INCOTERMS available (FOB, CFR, etc.).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLACEHOLDER FOR FUTURE SECTION -->
+    <section id="future">
+      <div class="container">
+        <h3>Additional Section (placeholder)</h3>
+        <p class="lead">Reserved for certifications, partners, or case studies. We can fill this later without changing the layout.</p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (sample placeholders to edit later) -->
+    <section id="testimonials">
+      <div class="container">
+        <h3>What partners say (sample)</h3>
+        <div class="grid-3">
+          <div class="card padded" data-animate>“Consistent quality and responsive communication on bulk orders.”<br><strong>— Purchasing Manager, Seasoning Co.</strong></div>
+          <div class="card padded" data-animate>“Clear export paperwork and reliable lead times from Cairo.”<br><strong>— Logistics Lead, Importer</strong></div>
+          <div class="card padded" data-animate>“Solid dehydrated onion and garlic at competitive pricing.”<br><strong>— Director, Food Mfg.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <h3>Contact</h3>
+        <p class="lead">Contact us for further information. We’ll reply promptly with product details and pricing.</p>
+        <div class="card padded" style="display:grid; grid-template-columns:1.1fr .9fr; gap:18px">
+          <div>
+            <p><strong>Email:</strong> <a href="mailto:sales@legacyspicellc.com">sales@legacyspicellc.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+16155251297">+1 (615) 525‑1297</a></p>
+            <p><strong>Location:</strong> Cairo, Egypt</p>
+            <div style="display:flex; gap:10px; margin-top:6px" aria-label="Social icons (placeholders)">
+              <!-- Placeholder icons without links for later -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--spice)" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--spice)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--spice)" stroke-width="2"><path d="M4 4h16v16H4z"/></svg>
+            </div>
+          </div>
+
+          <!-- Progressive contact form: posts to data-form-endpoint if provided, else falls back to mailto -->
+          <form id="quoteForm" data-form-endpoint="" onsubmit="handleSubmit(event)">
+            <label> Company<br>
+              <input name="company" required placeholder="Your company" style="width:100%">
+            </label>
+            <br>
+            <label> Contact name<br>
+              <input name="name" required placeholder="Full name" style="width:100%">
+            </label>
+            <br>
+            <label> Email<br>
+              <input type="email" name="email" required placeholder="you@company.com" style="width:100%">
+            </label>
+            <br>
+            <label> Interest (items / volume)<br>
+              <textarea name="message" rows="4" placeholder="e.g., Dehydrated onion, 3 tons; timeline; specs" style="width:100%"></textarea>
+            </label>
+            <br>
+            <button class="btn" type="submit">Send</button>
+            <div style="font-size:.85rem; color:#6a6156; margin-top:6px">This form will open your email app unless a form endpoint is configured.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Egyptian Spice Exports &mdash; Bringing Egypt's finest to your business!
+    <div class="container">
+      © <span id="y"></span> Legacy Spice LLC • Cairo, Egypt • sales@legacyspicellc.com • +1 (615) 525‑1297
+    </div>
   </footer>
+
+  <script>
+    // Reveal on scroll
+    const io = new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);}}),{threshold:.15});
+    document.querySelectorAll('[data-animate]').forEach(el=>io.observe(el));
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Progressive form: use Formspree/endpoint if provided; else open a mailto
+    function handleSubmit(e){
+      e.preventDefault();
+      const f = e.target;
+      const endpoint = f.getAttribute('data-form-endpoint');
+      const formData = new FormData(f);
+
+      if (endpoint && endpoint.trim().length > 0){
+        fetch(endpoint, {method:'POST', body: formData, headers:{'Accept':'application/json'}})
+          .then(r=>r.ok?alert('Thanks! We\'ll be in touch shortly.'):Promise.reject())
+          .catch(()=>{ fallbackMailto(formData); });
+      } else {
+        fallbackMailto(formData);
+      }
+    }
+
+    function fallbackMailto(fd){
+      const company = encodeURIComponent(fd.get('company')||'');
+      const name = encodeURIComponent(fd.get('name')||'');
+      const email = encodeURIComponent(fd.get('email')||'');
+      const message = encodeURIComponent(fd.get('message')||'');
+      const body = `Company: ${company}%0AName: ${name}%0AEmail: ${email}%0A%0A${message}`;
+      window.location.href = `mailto:sales@legacyspicellc.com?subject=Bulk%20Spice%20Inquiry&body=${body}`;
+    }
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Legacy Spice LLC",
+    "url": "https://www.legacyspicellc.com/",
+    "logo": "https://www.legacyspicellc.com/logo.png",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "sales@legacyspicellc.com",
+      "telephone": "+1-615-525-1297"
+    }],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cairo",
+      "addressCountry": "EG"
+    }
+  }
+  </script>
 </body>
 </html>
